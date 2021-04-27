@@ -16,4 +16,21 @@
     <string name="save">저장</string>
     <string name="refresh">새로고침</string>
     <string name="action_buttons">버튼</string>
+    <string name="input_phone">전화번호를 입력하세요</string>
+    <string name="input_address">주소를 입력하세요</string>
+    <string-array name="phoneTypes">
+        <item>집전화</item>
+        <item>사무실전화</item>
+        <item>휴대폰</item>
+        <item>기타</item>
+    </string-array>
+    <string name="action_spinners">Spinners</string>
+    <string name="autologin">자동로그인</string>
+    <string name="red">빨간색</string>
+    <string name="yellow">노란색</string>
+    <string name="blue">파란색</string>
+    <string name="cat">고양이</string>
+    <string name="dog">강아지</string>
+    <string name="owl">부엉이</string>
+    <string name="action_checkboxes">체크박스</string>
 </resources>
