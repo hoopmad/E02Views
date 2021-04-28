@@ -3,6 +3,7 @@ package net.skhu;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -19,8 +20,22 @@ public class SpinnersActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stringArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner_addressType);
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner_addressType);
         spinner.setAdapter(adapter);
+
+        AdapterView.OnItemSelectedListener listener2 = new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int index = spinner.getSelectedItemPosition();
+                String text = spinner.getSelectedItem().toString();
+                String s = String.format("주소:%s(%d)", text, index);
+                Toast.makeText(SpinnersActivity.this, s, Toast.LENGTH_SHORT).show();
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        };
+        spinner.setOnItemSelectedListener(listener2);
+
 
         View.OnClickListener listener1 = new View.OnClickListener() {
             @Override
